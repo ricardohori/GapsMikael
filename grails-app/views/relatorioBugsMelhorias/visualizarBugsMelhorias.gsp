@@ -2,11 +2,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
+        <link rel="stylesheet" type=text/css href="${resource(dir: 'css', file: 'relatorio-bugs.css')}" />
     </head>
     
     <body>
         <div>
-        	<table style="width:600px;">
+        	<table class="relatorio-bugs">
         		<thead>
 	        		<tr>
 	        			<td style="font-weight: bold;">Titulo<td>
@@ -25,14 +26,14 @@
 	        		</tr>
 	        	</thead>
 	        	<g:each in="${dadosTabela}" var="itensMap">
-        			<tr>
+        			<tr >
         				<td >${itensMap.TITULO}<td>
         				<td >${itensMap.ESTORIA}<td>
         				<td >${itensMap.SPRINT}<td>
-        				<td >${itensMap.TIPO}<td>
+        				<td class="${itensMap.TIPO == 'BUG'?"tipo-bug":"tipo-melhoria"}">${itensMap.TIPO}<td>
        					<td >${itensMap.FUNCIONALIDADE}<td>
         				<td >${itensMap.RESPONSAVEL}<td>
-        				<td >${itensMap.SEVERIDADE}<td>
+        				<td class="severidade-${itensMap.SEVERIDADE}">${itensMap.SEVERIDADE}<td>
         				<td >${itensMap.BREVE_DESCRICAO}<td>
         				<td >${itensMap.AMBIENTE}<td>
         				<td >${itensMap.DATA_OCORRENCIA}<td>

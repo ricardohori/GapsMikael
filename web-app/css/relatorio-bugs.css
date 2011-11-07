@@ -1,0 +1,72 @@
+table{
+	width: 100%;
+	border: 1px solid;
+	border-color: rgb(216,216,216);
+	border-collapse: collapse;
+}
+
+table thead {
+	font-family: calibri;
+	font-size: 12px;
+	text-align: center;
+	background-color: rgb(242,242,242);
+	border: 1px solid;
+	border-color: rgb(216,216,216);
+	border-collapse: collapse;
+}
+
+table thead td {
+	font-family: calibri;
+	font-size: 12px;
+}
+
+
+table td{
+	border: 1px solid;
+	border-color: rgb(216,216,216);
+	padding: 5px;	
+	font-family: calibri;
+	font-size: 10px;
+}
+
+table .tipo-melhoria{
+	background-color: rgb(252,213,180);
+	color: rgb(228,109,10);
+	font-weight: bold;
+}
+
+table .tipo-bug{
+	background-color: rgb(230,184,185);
+	color: rgb(255,0,0);
+	font-weight: bold;
+}
+
+table .severidade-4{
+	background-color: rgb(225,228,188);
+	color: rgb(117,146,60);
+	font-weight: bold;
+}
+
+table .severidade-3{
+	background-color: rgb(234,241,221);
+	color: rgb(117,146,60);
+	font-weight: bold;
+}
+
+table .severidade-2{
+	background-color: rgb(250,192,144);
+	color: rgb(247,150,70);
+	font-weight: bold;
+}
+
+table .severidade-1{
+	background-color: rgb(230,184,185);
+	color: rgb(255,0,0);
+	font-weight: bold;
+}
+
+table .status-concluido{
+	background-color: rgb(242,242,242);
+	color: rgb(191,191,191);
+	font-weight: bold;
+}
