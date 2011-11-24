@@ -79,10 +79,10 @@ class GeracaoRelatorioApontamentosService {
 			def linha = [apontamentos:[]]
 			row.each{subRow->
 				cal.setTime sdf.parse(subRow.DH_APONTAMENTO)
-				def horas = (subRow.DURACAO as Double)/60 as Integer
-				def minutos = (subRow.DURACAO as Double)%60 as Integer
+//				def horas = (subRow.DURACAO as Double)/60 as Integer
+//				def minutos = (subRow.DURACAO as Double)%60 as Integer
 				linha.apontamentos << [apontamento:timeFormatter.format(sdf.parse(subRow.DH_APONTAMENTO)), tipo:subRow.TIPO_APONTAMENTO,
-					dSemana:"${day(cal.get(Calendar.DAY_OF_WEEK))} - ${dia}", duracao:"$horas:$minutos"]
+					dSemana:"${day(cal.get(Calendar.DAY_OF_WEEK))} - ${dia}"]
 				i++
 			}
 			def trabalhoDia = row.findAll{it.DURACAO}.sum{it.DURACAO} as Double
