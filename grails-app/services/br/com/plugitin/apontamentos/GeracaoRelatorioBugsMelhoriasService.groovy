@@ -18,7 +18,7 @@ class GeracaoRelatorioBugsMelhoriasService {
 	def static cal = GregorianCalendar.getInstance()
 	static DecimalFormat numFormat = DecimalFormat.getInstance()
 	
-    def gerarRelatorioBugsMelhorias(bugs=true, melhorias=true, encerrados=true) {
+    def gerarRelatorioBugsMelhorias(bugs, melhorias, encerrados, ordenadoPor, ascOrDec="asc") {
 		def db = [url:'jdbc:oracle:thin:@SPDEVDB04:1521:DES', user:'sgi_ro', password:'SGI_RO', driver:'oracle.jdbc.driver.OracleDriver']
 		Sql sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
 		
@@ -30,6 +30,7 @@ class GeracaoRelatorioBugsMelhoriasService {
 		if(!melhorias && bugs) queryBuilder.append "tipo = 'BUG' "
 		if(melhorias && !bugs) queryBuilder.append "tipo = 'MELHORIA' "
 		if(!encerrados)queryBuilder.append "AND DATA_CONCLUSAO IS NULL "
+		if(ordenadoPor)queryBuilder.append "ORDER BY $ordenadoPor $ascOrDec"
 		
 		def rows = sql.rows(queryBuilder.toString())
 		return [dadosTabela:rows]

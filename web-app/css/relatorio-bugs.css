@@ -20,7 +20,10 @@ table thead td {
 	font-size: 12px;
 }
 
-
+table thead th {
+	font-family: calibri;
+	font-size: 12px;
+}
 table td{
 	border: 1px solid;
 	border-color: rgb(216,216,216);
@@ -69,4 +72,14 @@ table .status-concluido{
 	background-color: rgb(242,242,242);
 	color: rgb(191,191,191);
 	font-weight: bold;
+}
+
+#frameFiltro{
+	width: 34%;
+}
+#painelFiltro input{
+	margin-left: 15px; !IMPORTANT
+}
+#painelFiltro span{
+	margin: 5px; 5px; 5px; 5px; !IMPORTANT
 }

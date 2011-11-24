@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+            url = "jdbc:hsqldb:file:/d/jboss3/gapsDB/prodDb;shutdown=true"
         }
     }
 }
